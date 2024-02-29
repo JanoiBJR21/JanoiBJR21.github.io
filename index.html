@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Apichat Portfolio</title>
-    <!-- HTML -->
-    <!-- Custom Style -->
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="main.js" />
+    <script
+    src="https://kit.fontawesome.com/3cdb9253f5.js"
+    crossorigin="anonymous"
+    ></script>
   </head>
   <body>
+
+    <!------ Home ------>
     <div id="header">
       <div class="container">
         <nav>
@@ -30,7 +33,8 @@
         </div>
       </div>
     </div>
-    <!-- About -->
+
+    <!------ About ------>
     <div id="about">
       <div class="container">
         <div class="row">
@@ -91,7 +95,84 @@
         </div>
       </div>
     </div>
-<!-- Services -->
+
+    <!------ Services ----->
+    <div id="services">
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div>
+            <i class="fa-solid fa-code"></i>
+            <h2>Web Design</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla
+              nibh, tincidunt sit amet sapien quis.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <i class="fa-solid fa-crop-simple"></i>
+            <h2>UI/UX Design</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla
+              nibh, tincidunt sit amet sapien quis.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <i class="fa-brands fa-app-store"></i>
+            <h2>App Design</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla
+              nibh, tincidunt sit amet sapien quis.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!------ Portfolio ------>
+    <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="images/work-1.png" />
+            <div class="layer">
+              <h3>Social Media App</h3>
+              <p>
+                The app connectd you yo the talented people around the world.
+                Download it from play store.
+              </p>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/work-2.png" />
+            <div class="layer">
+              <h3>Music App</h3>
+              <p>
+                The app connectd you yo the talented people around the world.
+                Download it from play store.
+              </p>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/work-3.png" />
+            <div class="layer">
+              <h3>Online Shopping App</h3>
+              <p>
+                The app connectd you yo the talented people around the world.
+                Download it from play store.
+              </p>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script>
       var tablinks = document.getElementsByClassName("tab-links");
@@ -108,5 +189,6 @@
         document.getElementById(tabname).classList.add("active-tab");
       }
     </script>
+
   </body>
 </html>
