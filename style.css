@@ -276,3 +276,7 @@ width: 100%;
     color: #ff004f;
     transform: translateY(-5px);
 }
+.btn.CV{
+    display: inline-block;
+    background: #ff004f;
+}
