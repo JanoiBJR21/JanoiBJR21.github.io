@@ -18,18 +18,21 @@
     <div id="header">
       <div class="container">
         <nav>
-          <img src="images/logo.png" class="logo" />
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
+          <h1><span>A</span>pichat.</h1>
+          <!-- <img src="images/logo.png" class="logo" /> -->
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
           </ul>
+          <i class="fas fa-bars" onclick="openmenu()"></i>
         </nav>
         <div class="header-text">
           <p>Junior Front-End Developer</p>
-          <h1>Hi, I'm <span>Apichat</span><br />Wongtala From Thailand</h1>
+          <h1>Hi, I'm <span>Apichat</span><br />Ja From Thailand</h1>
         </div>
       </div>
     </div>
@@ -181,7 +184,7 @@
         <div class="row">
           <div class="contact-left">
             <h1 class="sub-title">Contact Me</h1>
-            <p><i class="fa-solid fa-paper-plane"></i>apichat26870@gmail.com</p></a><br>
+            <p><i class="fa-solid fa-paper-plane"></i>apichat26870@gmail.com</p><br>
             <p><i class="fa-solid fa-square-phone"></i>096-296-6382</p>
             <div class="socail-icons">
               <a href="https://facebook.com"><i class="fa-brands fa-square-facebook"></i></a>
@@ -189,18 +192,20 @@
               <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
               <a href="https://github.com"><i class="fa-brands fa-github"></i></a>
               <a href="https://linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
-              <!-- <a href="https://line.com"><i class="fa-brands fa-line"></i></i></a> -->
             </div>
-            <a href="images/My Resume.pdf" class="btn resume">Download Resume</a>
+            <a href="images/My Resume.pdf" download class="btn btn2">Download Resume</a>
           </div>
           <div class="contact-right">
-            <form>
+            <form name="submit-to-google-sheet">
               <input type="text" name="Name" placeholder="Your Name" required>
-              <input type="email" name="email" placeholder="Your Email" required>
+              <input type="email" name="Email" placeholder="Your Email" required>
               <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-              <button type="submit">Submit</button>
+              <button type="submit" class="btn btn2">Submit</button>
             </form>
           </div>
+      </div>
+      <div class="copyright">
+        <p>Copyrigth Ⓒ Apichat. Mede wtih <i class="fa-solid fa-heart"></i> by Easy Tutorials</p>
       </div>
     </div>
 
@@ -221,5 +226,28 @@
       }
     </script>
 
+    <script>
+
+      var sidemeu = document.getElementById("sidemenu");
+
+      function openmenu(){
+        sidemeu.style.right = "0";
+      }
+      function closemenu(){
+        sidemeu.style.right = "-200px";
+      }
+
+    </script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbz0w7PFGiumntERnS3hVMO08gcqcxfg3p0tEBUDbZH_VuemansyhcSBfmCcKmrRmGN1zw/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
   </body>
 </html>
