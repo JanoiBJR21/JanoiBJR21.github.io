@@ -200,7 +200,9 @@
             <a href="images/My Resume.pdf" download class="btn btn2">Download Resume</a>
           </div>
           <div class="contact-right">
-            <form name="submit-to-google-sheet">
+            <form         method="post"
+            action="https://script.google.com/macros/s/AKfycbwr7ZJjK1UJHWl-1lEqFXfP3NqJFvB8W1sP33y8VLsS564cw2hOpaasvsPOBO3w3EjNDQ/exec"
+            name="contact-form">
               <input type="text" name="Name" placeholder="Your Name" required>
               <input type="email" name="Email" placeholder="Your Email" required>
               <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
@@ -243,15 +245,17 @@
 
     </script>
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbz0w7PFGiumntERnS3hVMO08gcqcxfg3p0tEBUDbZH_VuemansyhcSBfmCcKmrRmGN1zw/exec'
-  const form = document.forms['submit-to-google-sheet']
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwr7ZJjK1UJHWl-1lEqFXfP3NqJFvB8W1sP33y8VLsS564cw2hOpaasvsPOBO3w3EjNDQ/exec'
 
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  })
+const form = document.forms['contact-form']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => alert("Thank you! your form is submitted successfully." ))
+  .then(() => { window.location.reload(); })
+  .catch(error => console.error('Error!', error.message))
+})
 </script>
   </body>
 </html>
